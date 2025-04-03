@@ -15,7 +15,7 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://chat-app-room-adda99.vercel.app/',
     methods: ['GET', 'POST']
   }
 });
@@ -61,7 +61,11 @@ io.on('connection', (socket) => {
 }   );
 
 app.use(router);
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({
+  origin: "https://chat-app-room-adda99.vercel.app/", // your Vercel frontend URL
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
