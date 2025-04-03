@@ -15,10 +15,12 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server, {
   cors: {
-    origin: 'https://chat-app-room-adda99.vercel.app/',
-    methods: ['GET', 'POST']
+    origin: "https://chat-app-room-adda99.vercel.app",
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
+
 
 io.on('connection', (socket) => {
     console.log('New WebSocket connection established');

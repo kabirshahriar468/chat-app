@@ -19,6 +19,10 @@ const Chat = () => {
   const ENDPOINT = 'https://chat-app-1-2kxs.onrender.com/'; // ✅ Fix: Ensure the URL is correct for your server
   useEffect(() => {
     const {name,room} = queryString.parse(location.search);
+    socket = io(ENDPOINT, {
+      transports: ["websocket"],
+    });
+    
     socket = io(ENDPOINT); // ✅ Fix: Ensure the URL is correct for your server
     setName(name);
     setRoom(room);
