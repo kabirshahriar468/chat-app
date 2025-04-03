@@ -16,7 +16,7 @@ const Chat = () => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState(''); // ✅ Fix: Add message state
   const [messages, setMessages] = useState([]); // ✅ Fix: Add messages state
-  const ENDPOINT = 'https://chat-app-room-adda99.vercel.app/'; // ✅ Fix: Ensure the URL is correct for your server
+  const ENDPOINT = 'https://chat-app-1-2kxs.onrender.com/'; // ✅ Fix: Ensure the URL is correct for your server
   useEffect(() => {
     const {name,room} = queryString.parse(location.search);
     socket = io(ENDPOINT); // ✅ Fix: Ensure the URL is correct for your server
