@@ -12,7 +12,7 @@ int main()
     cin.tie(0);
     ll t=1;
     cin>>t;
-    while(t--){
+    thuk(t--){
     }
     return 0;
 }
